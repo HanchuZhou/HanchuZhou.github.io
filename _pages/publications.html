@@ -9,10 +9,23 @@ author_profile: true
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
-{% include base_path %}
+<div class="publication">
+  <h3 style="font-size: 24px;"><strong>CarDreamer: Open-Source Learning Platform for World Model based Autonomous Driving</strong></h3>
+  <p><strong>Abstract:</strong> To safely navigate intricate real-world scenarios, autonomous vehicles must be able to adapt to diverse road conditions and anticipate future events. World model (WM) based reinforcement learning (RL) has emerged as a promising approach by learning and predicting the complex dynamics of various environments. Nevertheless, to the best of our knowledge, there does not exist an accessible platform for training and testing such algorithms in sophisticated driving environments. To fill this void, we introduce CarDreamer, the first open-source learning platform designed specifically for developing WM based autonomous driving algorithms. It comprises three key components: 1) World model backbone: CarDreamer has integrated some state-of-the-art WMs, which simplifies the reproduction of RL algorithms. The backbone is decoupled from the rest and communicates using the standard Gym interface, so that users can easily integrate and test their own algorithms. 2) Built-in tasks: CarDreamer offers a comprehensive set of highly configurable driving tasks which are compatible with Gym interfaces and are equipped with empirically optimized reward functions. 3) Task development suite: This suite streamlines the creation of driving tasks, enabling easy definition of traffic flows and vehicle routes, along with automatic collection of multi-modal observation data. A visualization server allows users to trace real-time agent driving videos and performance metrics through a browser. Furthermore, we conduct extensive experiments using built-in tasks to evaluate the performance and potential of WMs in autonomous driving. Thanks to the richness and flexibility of CarDreamer, we also systematically study the impact of observation modality, observability, and sharing of vehicle intentions on AV safety and efficiency. All code and documents are accessible on GitHub</p>
+
+  <p><strong>Citation: </strong>Gao, D., Cai, S., Zhou, H., Wang, H., Soltani, I., & Zhang, J. (2024). CarDreamer: Open-Source Learning Platform for World Model based Autonomous Driving. arXiv preprint arXiv:2405.09111.</a></p>
+
+  <p><strong>URL: </strong> <a href="https://arxiv.org/abs/2405.09111">Link to the paper</a></p>
+</div>
+
+<hr>
+
+
+
+<!-- {% include base_path %} -->
 
 <!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
+<!-- {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
     {% for post in site.publications reversed %}
@@ -30,7 +43,7 @@ author_profile: true
   {% for post in site.publications reversed %}
     {% include archive-single.html %}
   {% endfor %}
-{% endif %}
+{% endif %} -->
 
 
 

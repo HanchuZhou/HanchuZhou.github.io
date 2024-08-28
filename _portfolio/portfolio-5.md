@@ -1,6 +1,6 @@
 ---
 title: "Vehicle Planning using GPT-3.5"
-excerpt: "Fine-tune a GPT-3.5 with collision-free trajectories as planner.<br/>"
+excerpt: "Fine-tune a GPT-3.5 with collision-free trajectories as planner.<br/><img src='/images/llm3.png'>"
 collection: portfolio
 ---
 
