@@ -23,6 +23,12 @@ Education
       <td align="center" style="border: none;">Ph.D. of ECE</td>
       <td align="right" style="border: none;">Sep. 2022 - Present</td>
     </tr>
+    <tr style="border: none; line-height: 0.1;">
+      <td align="left" style="border: none;">Supervised by Prof. Junshan Zhang</td>
+    </tr>
+    <tr style="border: none; line-height: 0.4;">
+      <td colspan="3" style="border: none;"><br></td>
+    </tr>
     <tr style="border: none;">
       <td align="left" style="border: none;"><strong>Zhejiang University</strong></td>
       <td align="center" style="border: none;">Bachelor of Control Science</td>
