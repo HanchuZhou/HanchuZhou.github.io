@@ -38,7 +38,12 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .publications ol.bibliography { list-style: none; padding: 0; margin-top: 0; }
 
-.publications ol.bibliography li { min-height: 110px; margin-bottom: 0.5rem; }
+/* CSS variable for teaser height so spacing can follow the image size */
+:root { --teaser-width: 25rem; --teaser-height: 10rem; --teaser-gap: 1rem; }
+
+/* ensure each publication entry aligns its children at the top so images sit next to the title/metadata
+  and set min-height/margin-bottom based on teaser height so spacing is consistent */
+.publications ol.bibliography li { display: flex; align-items: flex-start; gap: var(--teaser-gap); min-height: calc(var(--teaser-height) + 0.6rem); margin-bottom: calc(var(--teaser-height) * 0.06 + 0.1rem); }
 
 .publications ol.bibliography li .abbr { height: 8rem; margin-bottom: 0.5rem; }
 
@@ -79,4 +84,59 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 
 .publications ol.bibliography li div.abstract.hidden.open { border-color: var(--global-text-color); }
 
-.publications ol.bibliography li .teaser { border-radius: 8px; box-shadow: 3px 3px 6px #888; height: 123px; width: 270px; margin-top: 5px; margin-left: 5px; margin-bottom: 5px; object-fit: cover; }
+.publications ol.bibliography li .teaser {
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px #888;
+  /* larger by default to make publication images more prominent */
+  width: var(--teaser-width);
+  height: var(--teaser-height);
+  margin-top: 0;
+  margin-left: 0.3rem;
+  margin-bottom: 0.3rem;
+  object-fit: cover;
+}
+
+/* Ensure pub-row inside the publications section aligns children at the top */
+.publications .pub-row {
+  align-items: flex-start !important;
+}
+
+/* Make the teaser explicitly align to flex-start so it sits at the top of the text column */
+.publications ol.bibliography li .teaser {
+  align-self: flex-start;
+}
+
+/* Also ensure the left column that contains the teaser aligns its contents to the top.
+   Some entries use a `.col-sm-3` wrapper, so set it to flex-start alignment. */
+.publications ol.bibliography li .col-sm-3 {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Ensure badge positioned inside the left column doesn't push the image down */
+.publications ol.bibliography li .abbr abbr {
+  top: 0.4rem; /* slightly lower than previous 8px if needed */
+}
+
+/* Responsive: reduce teaser size on smaller screens so layout stays readable */
+@media (max-width: 960px) {
+  :root { --teaser-width: 14rem; --teaser-height: 7.5rem; --teaser-gap: 0.8rem; }
+  .publications ol.bibliography li .teaser {
+    width: var(--teaser-width);
+    height: var(--teaser-height);
+    margin-left: 0.5rem;
+  }
+  .publications ol.bibliography li { min-height: calc(var(--teaser-height) + 0.6rem); margin-bottom: calc(var(--teaser-height) * 0.06 + 0.6rem); }
+}
+
+@media (max-width: 480px) {
+  :root { --teaser-width: 100%; --teaser-height: 9rem; --teaser-gap: 0.6rem; }
+  .publications ol.bibliography li .teaser {
+    width: var(--teaser-width);
+    height: auto;
+    max-height: var(--teaser-height);
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  .publications ol.bibliography li { min-height: calc(var(--teaser-height) + 0.6rem); margin-bottom: calc(var(--teaser-height) * 0.06 + 0.6rem); }
+}

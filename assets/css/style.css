@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
-body { background-color: #fff; padding: 0px; font: 16.0px/1.5 Crimson Pro, serif; color: #595959; font-weight: 400; margin: 0; }
+/* Slightly larger base font and rem-based sizing so other elements (icons/images) scale consistently */
+html { font-size: 112.5%; } /* approx 18px if browser default is 16px */
+body { background-color: #fff; padding: 0; font: 1rem/1.6 Crimson Pro, serif; color: #595959; font-weight: 400; margin: 0; }
 
 .pub-row { display: flex; align-items: center; }
 
-.social-icons a { display: inline-block; height: 2.4rem; width: 2.4rem; background-color: transparent; color: #043361 !important; border-radius: 100%; text-align: center; font-size: 1.15rem; line-height: 2.5rem; margin-right: 1rem; }
+.social-icons a { display: inline-block; height: 2.4rem; width: 2.4rem; background-color: transparent; color: #043361 !important; border-radius: 100%; text-align: center; font-size: 1.15rem; line-height: 2.4rem; margin-right: 1rem; }
 
 @media (prefers-color-scheme: dark) { .social-icons a { color: #3eb7f0 !important; } }
 .social-icons a:last-child { margin-right: 0; }
@@ -16,7 +18,7 @@ body { background-color: #fff; padding: 0px; font: 16.0px/1.5 Crimson Pro, serif
 @media (prefers-color-scheme: dark) { .social-icons a:last-child { margin-right: 0; }
   .social-icons a:hover { background-color: #20212b; color: black; transform: scale(1.2); }
   /* .social-icons a:after { content: ''; display: block; margin: 0px; height: 1px; width: 0px; background: transparent; transition: width .5s ease, background-color .5s ease; } .social-icons a:hover:after { width: 100%; background: #a0b0ff; } */ }
-.icon-button { background-color: white; border-radius: 3.6rem; cursor: pointer; display: inline-block; font-size: 2.0rem; height: 3.6rem; line-height: 3.6rem; margin: 0 5px; position: relative; text-align: center; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; width: 3.6rem; }
+.icon-button { background-color: white; border-radius: 3.6rem; cursor: pointer; display: inline-block; font-size: 2.0rem; height: 3.6rem; line-height: 3.6rem; margin: 0 0.3125rem; position: relative; text-align: center; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; width: 3.6rem; }
 
 .icon-button span { border-radius: 0; display: block; height: 0; left: 50%; margin: 0; position: absolute; top: 50%; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; width: 0; }
 
@@ -30,7 +32,7 @@ body { background-color: #fff; padding: 0px; font: 16.0px/1.5 Crimson Pro, serif
 
 .github span { background-color: #000; }
 
-email { font-size: 14px; font-family: "Ubuntu Mono"; }
+email { font-size: 1.0rem; font-family: "Ubuntu Mono"; }
 
 .icon-button i { background: none; color: white; height: 3.6rem; left: 0; line-height: 3.6rem; position: absolute; top: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; width: 3.6rem; z-index: 10; }
 
@@ -67,7 +69,7 @@ papertitle { font-weight: 600; font-size: 100%; }
 
 .image.avatar:before { display: none; }
 
-.image.avatar img { border-radius: 100%; width: 80%; padding: 20px; }
+.image.avatar img { border-radius: 100%; width: 90%; padding: 1.25rem; height: auto; display: block; margin: 0 auto; }
 
 #header .image.avatar { margin: 0 0 1em 0; width: 8.00em; }
 
