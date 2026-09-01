@@ -18,6 +18,23 @@
     <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/mushroom.png" type="image/png" />
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
+    <script>
+      (function () {
+        var savedTheme;
+        try {
+          savedTheme = localStorage.getItem('hanchu-theme');
+        } catch (error) {
+          savedTheme = null;
+        }
+
+        var theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        document.documentElement.setAttribute('data-theme', theme);
+      }());
+    </script>
+
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
 
@@ -30,60 +47,35 @@
   <body>
     <div class="wrapper">
       <header>
-        
-        
-        <a class="image avatar"><img src="./assets/img/profile2.jpg" alt="avatar" /></a>
-        
+        <div class="image avatar"><img src="./assets/img/profile2.jpg" alt="avatar" /></div>
 
         <h1>Hanchu Zhou</h1>
-
-        
-        <position style="font-size:1.10rem;">Ph.D. Student</position>
-        <br>
-        
-        
-        <a href="" rel="noopener"><autocolor>UC Davis</autocolor></a>
-        <br>
-        
-        
+        <position>Ph.D. Student</position>
+        <a class="profile-affiliation" href="" rel="noopener"><autocolor>UC Davis</autocolor></a>
         <email>hczhou@ucdavis.edu</email>
-        
 
-        <br>
-        <br>
         <div class="social-icons">
-        
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=SoUViFAAAAAJ&hl=en">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="assets/files/CV_Hanchu_Zhou.pdf">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://github.com/HanchuZhou">
-          <i class="fab fa-github"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/hanchu-zhou-b1a682280/">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        
-<!-- 
-        
-        <a style="margin: 0 0 0 0" href="https://twitter.com/">
-          <i class="fab fa-twitter"></i>
-        </a> -->
-        
+          <a href="https://scholar.google.com/citations?user=SoUViFAAAAAJ&hl=en" aria-label="Google Scholar">
+            <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
+          </a>
+          <a href="assets/files/CV_Hanchu_Zhou.pdf" aria-label="Curriculum vitae">
+            <i class="ai ai-cv" style="font-size:1.3rem;"></i>
+          </a>
+          <a href="https://github.com/HanchuZhou" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/hanchu-zhou-b1a682280/" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
-        <br>
 
+        <button class="theme-toggle" type="button" aria-label="Switch color theme">
+          <span class="theme-toggle-icon" aria-hidden="true">
+            <i class="fas fa-sun theme-icon-light"></i>
+            <i class="fas fa-moon theme-icon-dark"></i>
+          </span>
+          <span>Color theme</span>
+        </button>
       </header>
       <section>
 
@@ -99,24 +91,84 @@
 <h2 id="research-interests">Research Interests</h2>
 
 <ul>
-  <li><strong>World Model</li>
-  <li><strong>Robot Learning</li>
-  <li><strong>Reinforcement Learning</li>
+  <li><strong>World Model</strong></li>
+  <li><strong>Robot Learning</strong></li>
+  <li><strong>Reinforcement Learning</strong></li>
 </ul>
 
 <h2 id="experience">Experience</h2>
 
-<ul>
-  <li style="display: flex; align-items: center; gap: 1rem;">
-    <span><strong>[Mar. 2026 - Present]</strong> Robot learning research intern at Analog Devices, working on tactile-aware world action model.</span>
-    <img src="./assets/img/analog-devices.webp" alt="Analog Devices logo" style="width: 110px; height: auto; margin-left: auto; flex-shrink: 0;" />
-  </li>
-</ul>
+<article class="experience-card">
+  <div class="experience-summary">
+    <div class="experience-logo">
+      <img src="./assets/img/analog-devices.webp" alt="Analog Devices logo" />
+    </div>
 
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
+    <div class="experience-details">
+      <div class="experience-heading">
+        <div>
+          <h3>Robot Learning Research Intern</h3>
+          <p class="experience-company">Analog Devices (ADI)</p>
+        </div>
+        <span class="experience-date">
+          <time datetime="2026-03">Mar 2026</time> &ndash; <time datetime="2026-09">Sep 2026</time>
+        </span>
+      </div>
+
+      <p class="experience-description">
+        Developed TARO: an agile tactile world action model for contact-rich robot control.
+      </p>
+
+      <div class="experience-tags" aria-label="Research areas">
+        <span>Robot Learning</span>
+        <span>World Action Model</span>
+        <span>Tactile Sensing</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="experience-media" data-video-container>
+    <video class="experience-video" controls preload="metadata" playsinline muted loop aria-label="ADI internship project demo">
+      <source src="./assets/img/internet_cable_insertion_corrective.mp4" type="video/mp4" />
+      Your browser does not support HTML video.
+    </video>
+    <div class="experience-video-placeholder">
+      <span class="experience-play-icon" aria-hidden="true"><i class="fas fa-play"></i></span>
+      <span class="experience-video-label">Project demo</span>
+      <small>Video coming soon</small>
+    </div>
+  </div>
+</article>
+
+<h2 id="publications">Publications</h2>
 
 <div class="publications">
 <ol class="bibliography">
+
+
+<li>
+<div class="pub-row">
+  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+    <img src="./assets/img/taro_gear_assembly.gif" class="teaser img-fluid z-depth-1" alt="TARO tactile gear assembly demonstration" />
+            <abbr class="badge">arXiv</abbr>
+  </div>
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+      <div class="title"><a>TARO: An Agile Tactile World Action Model for Contact-Rich Robot Control</a></div>
+      <div class="author" style="font-weight: normal;">
+        <strong style="font-weight: bold; color:#eb954a">Hanchu Zhou</strong>, Brendan Lynch, Raman Goyal, Dechen Gao, Begum Kasap, Boqi Zhao, Junshan Zhang
+      </div>
+      <div class="periodical"><em>arXiv</em>
+      </div>
+    <div class="links">
+      <a class="btn btn-sm z-depth-0" role="button" aria-disabled="true" style="font-size:12px;">Paper</a>
+      <a class="btn btn-sm z-depth-0" role="button" aria-disabled="true" style="font-size:12px;">Code</a>
+      <a class="btn btn-sm z-depth-0" role="button" aria-disabled="true" style="font-size:12px;">ProjectPage</a>
+    </div>
+  </div>
+</div>
+</li>
+
+<br />
 
 
 <li>
@@ -317,27 +369,27 @@
 
 <h2 id="misc">Miscellaneous</h2>
 
-<div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-  <img src="./assets/img/bjj.jpg" alt="BJJ" style="width: 200px; height: auto; margin-right: 1rem;">
-  <div>
-    <span style="display: block; font-size: 1.2rem; font-weight: bold;">Brazilian Jiu-Jitsu (BJJ)</span>
-    <p style="margin: 0; font-size: 1rem;">BJJ is a martial art and combat sport based on ground fighting and submission holds. It focuses on controlling and submitting opponents.</p>
+<div class="misc-card">
+  <img src="./assets/img/bjj.jpg" alt="BJJ">
+  <div class="misc-content">
+    <span class="misc-title">Brazilian Jiu-Jitsu (BJJ)</span>
+    <p>BJJ is a martial art and combat sport based on ground fighting and submission holds. It focuses on controlling and submitting opponents.</p>
     <ul>
-      <li style="margin: 0; font-size: 1rem;">I have been training for BJJ since Jan. 2023 and I got my blue belt on Jun. 2024.</li>
-      <li style="margin: 0; font-size: 1rem;">Thanks to Mr.Pedro, our best coach, for always being so patient. </li>
+      <li>I have been training for BJJ since Jan. 2023 and I got my blue belt on Jun. 2024.</li>
+      <li>Thanks to Mr.Pedro, our best coach, for always being so patient. </li>
     </ul>
     
   </div>
 </div>
 
-<div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-  <img src="./assets/img/cali_2.jpg" alt="Calligraphy" style="width: 200px; height: auto; margin-right: 1rem;">
-  <div>
-    <span style="display: block; font-size: 1.2rem; font-weight: bold;">Chinese Calligraphy</span>
-    <p style="margin: 0; font-size: 1rem;">Chinese calligraphy is the art of beautiful handwriting with a history of thousands of years. It combines artistic expression with the philosophy of balance and harmony.</p>
+<div class="misc-card">
+  <img src="./assets/img/cali_2.jpg" alt="Calligraphy">
+  <div class="misc-content">
+    <span class="misc-title">Chinese Calligraphy</span>
+    <p>Chinese calligraphy is the art of beautiful handwriting with a history of thousands of years. It combines artistic expression with the philosophy of balance and harmony.</p>
     <ul>
-      <li style="margin: 0; font-size: 1rem;">I started to write calligraphy since 4.</li>
-      <li style="margin: 0; font-size: 1rem;">I mainly practice the Ou Style (欧体), known for its precise structure and elegant strokes.</li>
+      <li>I started to write calligraphy since 4.</li>
+      <li>I mainly practice the Ou Style (欧体), known for its precise structure and elegant strokes.</li>
     </ul>
   </div>
 </div>
@@ -377,6 +429,62 @@
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var toggle = document.querySelector('.theme-toggle');
+
+        function updateToggle(theme) {
+          var nextTheme = theme === 'dark' ? 'light' : 'dark';
+          toggle.setAttribute('aria-label', 'Switch to ' + nextTheme + ' mode');
+          toggle.setAttribute('title', 'Switch to ' + nextTheme + ' mode');
+        }
+
+        updateToggle(root.getAttribute('data-theme'));
+
+        toggle.addEventListener('click', function () {
+          var nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', nextTheme);
+          updateToggle(nextTheme);
+
+          try {
+            localStorage.setItem('hanchu-theme', nextTheme);
+          } catch (error) {
+            // The selected theme still applies for the current page view.
+          }
+        });
+      }());
+
+      document.querySelectorAll('[data-video-container]').forEach(function (container) {
+        var video = container.querySelector('video');
+        var revealVideo = function () {
+          container.classList.add('has-video');
+        };
+
+        if (video.readyState >= 1) {
+          revealVideo();
+        } else {
+          video.addEventListener('loadedmetadata', revealVideo, { once: true });
+        }
+
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                video.play().catch(function () {
+                  // Browser autoplay policies may require manual playback.
+                });
+              } else {
+                video.pause();
+              }
+            });
+          }, { threshold: 0.35 });
+
+          observer.observe(container);
+        }
+      });
+    </script>
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
