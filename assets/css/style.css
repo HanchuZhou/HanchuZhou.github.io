@@ -284,7 +284,7 @@ h3, h4, h5, h6 { color: var(--heading); font-weight: 600; }
   box-shadow: var(--shadow-lg);
 }
 
-.experience-summary { display: flex; gap: 20px; padding: 24px; }
+.experience-summary { display: flex; gap: 20px; padding: 24px 24px 12px; }
 
 .experience-logo {
   display: flex;
@@ -325,7 +325,7 @@ h3, h4, h5, h6 { color: var(--heading); font-weight: 600; }
   white-space: nowrap;
 }
 
-.experience-description { margin: 14px 0 13px; color: var(--text); line-height: 1.55; }
+.experience-description { margin: 14px 0 0; color: var(--text); line-height: 1.55; }
 .experience-tags { display: flex; flex-wrap: wrap; gap: 7px; }
 
 .experience-tags span {
@@ -475,7 +475,7 @@ darkonly { visibility: hidden; }
   #about-me + ul li { padding: 14px 15px 14px 18px; }
   #research-interests + ul li { font-size: 0.76rem; }
   #research-interests + ul li:not(:last-child)::after { margin: 0 7px; }
-  .experience-summary { display: block; padding: 18px; }
+  .experience-summary { display: block; padding: 18px 18px 12px; }
   .experience-logo { width: 100px; min-width: 0; height: 64px; margin-bottom: 15px; }
   .experience-heading { display: block; }
   .experience-date { display: inline-block; margin-top: 9px; }
