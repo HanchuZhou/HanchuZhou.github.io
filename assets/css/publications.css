@@ -61,6 +61,8 @@
   object-fit: cover;
 }
 
+.publications .duomind-teaser { object-position: center top; }
+
 .publications .badge {
   position: absolute !important;
   top: 9px !important;
