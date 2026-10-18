@@ -1,0 +1,30 @@
+requested-cat.jpg
+  User-selected source image, retained as the edit reference:
+  https://ih1.redbubble.net/image.5568953504.0392/flat,750x1000,075,t.jpg
+  Original image displays the artist credit ArtByDall.
+
+original-cat-cutout.png
+  Manually traced alpha cutout of requested-cat.jpg, preserving the original pixels.
+  Cropped to the helmet, face and chest. No generative image editing.
+
+rpg-source.jpg
+  RPG-7 photograph, U.S. Air Force / Nellis Air Force Base threat center.
+  Source: https://commons.wikimedia.org/wiki/File:Rpg-7.jpg
+  Public domain in the United States (U.S. federal government work).
+
+rpg-photo-cutout.png, rpg-photo-projectile.png
+  Cutouts of rpg-source.jpg. White background removed, rotated and mirrored.
+  The launcher is a separate HTML image layered over the original cat.
+  The flying projectile is cropped from the same photograph.
+
+explosion-sheet.png
+  Title: Explosion Sheet (boom3.png)
+  Creator: StumpyStrust
+  Source: https://opengameart.org/content/explosion-sheet
+  License: CC0 1.0 Universal (https://creativecommons.org/publicdomain/zero/1.0/)
+  Animated as an 8 by 8 sprite sheet on canvas.
+
+../../js/vendor/html2canvas.min.js
+  html2canvas 1.4.1, Copyright 2022 Niklas von Hertzen.
+  MIT license. https://html2canvas.hertzen.com/
+  Used locally to capture the actual page as the crumpling paper texture.

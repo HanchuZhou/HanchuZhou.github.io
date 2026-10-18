@@ -1,0 +1,39 @@
+.profile-sidebar { position: sticky; top: 32px; align-self: start; }
+.profile-sidebar > header { position: relative; top: auto; }
+.destroy-toolbar { display: flex; justify-content: center; margin-top: 18px; }
+.destroy-trigger, .destruction-close, .destruction-restore {
+  border: 1px solid #eb954a;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: transparent;
+  color: var(--heading);
+  font: 600 12px/1.4 "Inter", sans-serif;
+  cursor: pointer;
+}
+.destroy-trigger:hover { background: #eb954a; color: #101010; }
+.destroy-trigger:disabled { cursor: wait; opacity: .6; }
+body.destruction-active { overflow: hidden; }
+body.destruction-active > .wrapper { visibility: hidden; }
+.destruction-scene { position: fixed; inset: 0; z-index: 10000; overflow: hidden; background: #000; color: #fff; isolation: isolate; font-family: "Inter", sans-serif; }
+.destruction-close { position: absolute; z-index: 10; top: 20px; right: 20px; color: #bbb; border-color: #444; background: #080808; }
+.destruction-paper, .destruction-explosion { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.destruction-paper { z-index: 1; }
+.destruction-cat { position: absolute; z-index: 2; width: clamp(155px, 18vw, 240px); left: 5%; bottom: 9%; opacity: 1; transform: translateY(calc(100% + 15vh)); }
+.destruction-cat-photo { display: block; width: 100%; }
+.destruction-launcher { position: absolute; left: 2%; top: 62%; width: 108%; transform: rotate(-30deg); transform-origin: 52% 50%; }
+.destruction-launcher img { display: block; width: 100%; filter: drop-shadow(0 3px 3px #0009); }
+.destruction-muzzle { position: absolute; right: 1%; top: 50%; width: 1px; height: 1px; }
+.destruction-rocket { position: absolute; z-index: 3; width: 90px; height: 24px; opacity: 0; transform-origin: center; }
+.destruction-rocket img { position: absolute; width: 90px; height: 24px; object-fit: contain; }
+.destruction-rocket::before { content: ''; position: absolute; right: 75%; top: 6px; height: 12px; width: 95px; border-radius: 50%; background: linear-gradient(90deg, transparent, #f54d10, #ffdc80); filter: blur(3px); }
+.destruction-explosion { z-index: 4; }
+.destruction-ending { position: absolute; z-index: 6; inset: 0; display: grid; place-content: center; justify-items: center; gap: 22px; opacity: 0; pointer-events: none; text-align: center; }
+.destruction-restore { background: #eb954a; color: #111; }
+@media (max-width: 600px) {
+  .destroy-trigger { padding: 9px 12px; }
+  .destruction-close { top: 12px; right: 12px; }
+  .destruction-cat { left: 3%; bottom: 10%; width: 160px; }
+}
+
+@media (max-width: 900px) { .profile-sidebar { position: static; } }
+@media print { .profile-sidebar { position: static; } .destroy-toolbar { display: none; } }

@@ -41,11 +41,13 @@
     
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
+    <link rel="stylesheet" href="./assets/css/destroy-page.css">
     
 
   </head>
   <body>
     <div class="wrapper">
+      <div class="profile-sidebar">
       <header>
         <div class="image avatar"><img src="./assets/img/profile2.jpg" alt="avatar" /></div>
 
@@ -77,6 +79,10 @@
           <span>Color theme</span>
         </button>
       </header>
+      <div class="destroy-toolbar">
+        <button class="destroy-trigger" type="button">destroy this page!</button>
+      </div>
+      </div>
       <section>
 
       <h2 id="about-me">About Me</h2>
@@ -450,6 +456,8 @@
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
+    <script src="./assets/js/vendor/html2canvas.min.js" defer></script>
+    <script src="./assets/js/destroy-page.js" defer></script>
 
     <script>
       (function () {
