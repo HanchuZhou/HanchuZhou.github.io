@@ -62,6 +62,7 @@
 }
 
 .publications .duomind-teaser { object-position: center top; }
+.publications .vita-wam-teaser { object-fit: contain; }
 
 .publications .badge {
   position: absolute !important;
